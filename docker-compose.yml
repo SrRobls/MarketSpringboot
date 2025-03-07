@@ -32,3 +32,4 @@ services:
 networks:
   mynetwork:
     driver: bridge
+    name: mynetwork
