@@ -18,7 +18,9 @@ public class LoteModel {
     private String description;
     private Double price;
     private String location;
+    private Double area;
     private String image;
+
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)

@@ -29,7 +29,7 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(user));
     }
 
-    @GetMapping("/verificar_token")
+    @PostMapping("/verificar_token")
     public boolean verificarToken(@RequestBody TokenDTO request){
         return authService.validateToken(request.getToken(), request.getEmail());
 

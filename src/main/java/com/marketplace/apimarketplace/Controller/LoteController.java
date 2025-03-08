@@ -34,6 +34,7 @@ public class LoteController {
             @RequestParam("description") String description,
             @RequestParam("price") Double price,
             @RequestParam("location") String location,
+            @RequestParam("area") Double area,
             @RequestParam("usuarioId") Long usuarioId,
             @RequestParam(value = "image", required = false) MultipartFile image) {
 
@@ -44,6 +45,7 @@ public class LoteController {
         loteDto.setDescription(description);
         loteDto.setPrice(price);
         loteDto.setLocation(location);
+        loteDto.setArea(area);
         loteDto.setUsuarioId(usuarioId);
 
         LoteDTO loteSaved = loteService.createLote(loteDto, image, usuarioId);
@@ -58,9 +60,10 @@ public class LoteController {
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "price", required = false) Double price,
             @RequestParam(value = "location", required = false) String location,
+            @RequestParam(value = "area", required = false) Double area,
             @RequestParam(value = "image", required = false) MultipartFile image) {
 
-        Optional<LoteDTO> updatedLote = loteService.updateLote(id, title, description, price, location, image);
+        Optional<LoteDTO> updatedLote = loteService.updateLote(id, title, description, price, location, area, image);
         return updatedLote.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 

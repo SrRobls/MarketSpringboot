@@ -13,6 +13,7 @@ public class LoteMapper {
         lote.setDescription(dto.getDescription());
         lote.setPrice(dto.getPrice());
         lote.setLocation(dto.getLocation());
+        lote.setArea(dto.getArea());
         lote.setImage(dto.getImage());
         lote.setUsuario(usuario);
         return lote;
@@ -25,6 +26,7 @@ public class LoteMapper {
         dto.setDescription(lote.getDescription());
         dto.setPrice(lote.getPrice());
         dto.setLocation(lote.getLocation());
+        dto.setArea(lote.getArea());
         dto.setImage(lote.getImage());
         dto.setUsuarioId(lote.getUsuario().getId());
         return dto;
